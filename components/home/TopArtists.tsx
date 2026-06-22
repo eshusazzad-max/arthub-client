@@ -58,7 +58,7 @@ export default function TopArtists() {
                 duration: 3,
                 repeat: Infinity,
               }}
-                className="absolute left-1/2 top-20 -translate-x-1/2 w-[500px] h-[180px] bg-violet-500/15 blur-[180px] rounded-full"
+                className="absolute left-1/2 top-20 -translate-x-1/2 w-[600px] h-[200px] bg-violet-500/25 blur-[200px] rounded-full"
             />
            
             <motion.div
@@ -70,7 +70,7 @@ export default function TopArtists() {
                  duration: 4,
                  repeat: Infinity,
                }}
-                 className="absolute left-1/2 top-20 -translate-x-1/2 w-[600px] h-[220px] bg-cyan-500/15 blur-[180px] rounded-full"
+                 className="absolute left-1/2 top-20 -translate-x-1/2 w-[700px] h-[220px] bg-cyan-500/25 blur-[180px] rounded-full"
             />
 
           <h2 className="text-5xl font-bold bg-gradient-to-r from-white via-violet-200 to-cyan-300 bg-clip-text text-transparent">

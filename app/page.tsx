@@ -1,4 +1,5 @@
 import Categories from "@/components/home/Categories";
+import FAQSection from "@/components/home/FAQSection";
 import FeaturedArtworks from "@/components/home/FeaturedArtworks";
 import Hero from "@/components/home/Hero";
 import TopArtists from "@/components/home/TopArtists";
@@ -12,6 +13,7 @@ export default function Home() {
       <Categories/>
       <FeaturedArtworks/>
       <TopArtists/>
+      <FAQSection/>
     </main>
   );
 }
