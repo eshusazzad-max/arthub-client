@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Dreamscape Horizon",
+    "artist": "Sophia Carter",
+    "price": 320,
+    "category": "Painting",
+    "image": "/artworks/art1_dreamscape_horizon.jpg",
+    "description": "A breathtaking fantasy landscape capturing endless skies and glowing horizons."
+  },
+  {
+    "id": 2,
+    "title": "Golden Silence",
+    "artist": "Emma Wilson",
+    "price": 280,
+    "category": "Landscape",
+    "image": "/artworks/art2_golden_silence.jpg",
+    "description": "A peaceful mountain retreat illuminated by the warm colors of a golden sunset."
+  },
+  {
+    "id": 3,
+    "title": "Cyber Muse",
+    "artist": "Liam Brown",
+    "price": 450,
+    "category": "Digital Art",
+    "image": "/artworks/art3_cyber_muse.jpg",
+    "description": "A futuristic cyberpunk portrait blending neon lights with modern digital aesthetics."
+  },
+  {
+    "id": 4,
+    "title": "Ocean Memories",
+    "artist": "Noah Davis",
+    "price": 390,
+    "category": "Seascape",
+    "image": "/artworks/art4_ocean_memories.jpg",
+    "description": "A dramatic coastal sunset where powerful waves meet the endless horizon."
+  },
+  {
+    "id": 5,
+    "title": "Neon Geometry",
+    "artist": "Olivia White",
+    "price": 520,
+    "category": "Abstract",
+    "image": "/artworks/art5_neon_geometry.jpg",
+    "description": "A vibrant abstract composition inspired by cosmic colors and geometric forms."
+  },
+  {
+    "id": 6,
+    "title": "Timeless Sculpture",
+    "artist": "James Smith",
+    "price": 600,
+    "category": "Classical",
+    "image": "/artworks/art6_timeless_sculpture.jpg",
+    "description": "An elegant classical sculpture standing among ancient ruins at sunset."
+  }
+]

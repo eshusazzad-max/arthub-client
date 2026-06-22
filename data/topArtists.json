@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Sophia Carter",
+    "role": "Digital Illustra",
+    "country": "USA",
+    "sales": 120,
+    "image": "/artists/artist1.jpg",
+    "cover": "/artworks/art1_dreamscape_horizon.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Emma Wilson",
+    "role": "Traditional Painter",
+    "country": "Canada",
+    "sales": 98,
+    "image": "/artists/artist2.jpg",
+    "cover": "/artworks/art2_golden_silence.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Liam Brown",
+    "role": "3D Artist",
+    "country": "United Kingdom",
+    "sales": 85,
+    "image": "/artists/artist3.jpg",
+    "cover": "/artworks/art3_cyber_muse.jpg"
+  }
+]
