@@ -36,7 +36,8 @@ export default function FAQSection() {
   ];
 
   return (
-    <section className="relative py-28 overflow-hidden">
+    <section id="faq"
+     className="relative py-28 overflow-hidden">
       {/* Glow */}
       <motion.div
         animate={{

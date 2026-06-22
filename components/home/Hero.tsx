@@ -13,7 +13,8 @@ import { FaUsers, FaPalette, FaGlobe } from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <section className="min-h-[85vh]">
+    <section id="home"
+    className="min-h-[85vh]">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{

@@ -14,7 +14,8 @@ import {
 
 export default function TopArtists() {
   return (
-    <section className="relative py-28 overflow-hidden">
+    <section id="artists"
+     className="relative py-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}

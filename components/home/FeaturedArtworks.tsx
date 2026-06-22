@@ -7,7 +7,8 @@ import { FaArrowRight } from "react-icons/fa";
 
 export default function FeaturedArtworks() {
   return (
-    <section className="relative py-28 overflow-hidden">
+    <section  id="featured"
+     className="relative py-28 overflow-hidden">
 
       {/* Background Glow */}
       <motion.div
