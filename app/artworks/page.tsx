@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import artworks from "@/data/artworks.json";
 import ArtworkCard from "@/components/artworks/ArtworkCard";
 import SearchBar from "@/components/artworks/SearchBar";
@@ -9,8 +9,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { useSearchParams } from "next/navigation";
-import { useEffect } from "react";
-await new Promise((resolve) => setTimeout(resolve, 1000));
+import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
   export default function ArtworksPage() {
     
 
@@ -18,6 +17,11 @@ await new Promise((resolve) => setTimeout(resolve, 1000));
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [sortOption, setSortOption] = useState("Default");
   const searchParams = useSearchParams();
+
+    useEffect(() => {
+    const timer = setTimeout(() => {}, 1000);
+    return () => clearTimeout(timer);
+    }, []);
 
      useEffect(() => {
        const query = searchParams.get("search");
@@ -145,14 +149,46 @@ await new Promise((resolve) => setTimeout(resolve, 1000));
         {/* Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          {filteredArtworks.map((artwork) => (
+          {filteredArtworks.length > 0 ? (
 
-            <ArtworkCard
-              key={artwork.id}
-              artwork={artwork}
-            />
+            filteredArtworks.map((artwork) => (
+              <ArtworkCard
+                key={artwork.id}
+                artwork={artwork}
+        />
+        ))
 
-          ))}
+        ) : (
+
+           <div className="col-span-full text-center py-24">
+
+            <div className="flex justify-center mb-8">
+             <div className="w-28 h-28 rounded-full bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
+              <HiOutlineMagnifyingGlass className="text-5xl text-violet-400" />
+             </div>
+            </div>
+
+            <h2 className="text-4xl font-bold text-white">
+             No Artworks Found
+            </h2>
+
+            <p className="text-gray-400 mt-4">
+              Try another keyword or category.
+            </p>
+
+            <button
+              onClick={() => {
+                setSearchTerm("");
+                setSelectedCategory("All");
+              }}
+              className="mt-8 px-8 py-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 text-white font-semibold hover:scale-105 duration-300"
+            >
+               Clear Search
+            </button>
+
+           </div>
+
+         )}
 
         </div>
 
