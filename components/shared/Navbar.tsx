@@ -1,5 +1,11 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import { GoHome } from "react-icons/go";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import {
   HiOutlineArrowRightOnRectangle,
   HiOutlineSquares2X2,
@@ -7,6 +13,18 @@ import {
 import { IoPersonAddOutline, IoSearchOutline } from "react-icons/io5";
 
 export default function Navbar() {
+   const pathname = usePathname();
+   const [search, setSearch] = useState("");
+   const router = useRouter();
+
+   const handleSearch = (e: React.FormEvent) => {
+      e.preventDefault();
+
+       if (!search.trim()) return;
+
+       router.push(`/artworks?search=${search}`);
+     };
+
   return (
     <nav className="sticky top-0 z-50 border-b border-white/10 bg-[#050816]/80 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 lg:px-8 py-5 flex items-center justify-between gap-8">
@@ -15,31 +33,48 @@ export default function Navbar() {
         <Logo />
 
         {/* Search */}
-        <div className="hidden lg:flex items-center w-[380px] bg-[#0c1120] border border-white/10 rounded-full px-4 py-3">
-          <IoSearchOutline className="text-gray-400 text-xl" />
+        {pathname !== "/artworks" && (
+          <form
+            onSubmit={handleSearch}
+           className="hidden lg:flex items-center w-[380px] bg-[#0c1120] border border-white/10 rounded-full px-4 py-3"
+          >
 
-          <input
-            type="text"
-            placeholder="Search artworks..."
-            className="bg-transparent outline-none ml-3 text-white text-sm w-full"
-          />
-        </div>
+            <IoSearchOutline className="text-gray-400 text-xl" />
 
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search artworks..."
+                className="bg-transparent outline-none ml-3 text-white text-sm w-full"
+              />
+          </form>
+          
+        )}
         {/* Nav Links */}
         <ul className="hidden md:flex items-center gap-10 text-white">
 
-          <li className="group relative flex items-center gap-2 cursor-pointer hover:text-violet-400 duration-300">
+          <li>
+           <Link
+             href="/"
+             className="group relative flex items-center gap-2 hover:text-violet-400 duration-300"
+           >
             <GoHome />
-            Home
+              Home
 
-            <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-violet-500 duration-300 group-hover:w-full"></span>
+             <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-violet-500 duration-300 group-hover:w-full"></span>
+           </Link>
           </li>
+          <li>
+           <Link
+            href="/artworks"
+            className="group relative flex items-center gap-2 hover:text-violet-400 duration-300"
+            >
+             <HiOutlineSquares2X2 />
+              Browse Artworks
 
-          <li className="group relative flex items-center gap-2 cursor-pointer hover:text-violet-400 duration-300">
-            <HiOutlineSquares2X2 />
-            Browse Artworks
-
-            <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-violet-500 duration-300 group-hover:w-full"></span>
+             <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-violet-500 duration-300 group-hover:w-full"></span>
+            </Link>
           </li>
         </ul>
 

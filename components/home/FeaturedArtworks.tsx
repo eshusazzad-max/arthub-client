@@ -4,6 +4,7 @@ import Image from "next/image";
 import artworks from "@/data/artworks.json";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
+import Link from "next/link";
 
 export default function FeaturedArtworks() {
   return (
@@ -170,13 +171,14 @@ export default function FeaturedArtworks() {
                     ${art.price}
                   </h4>
 
-                  <button className="group flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 hover:scale-105 duration-300">
-
+                  <Link
+                    href={`/artworks/${art.id}`}
+                    className="group flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 hover:scale-105 duration-300"
+                  >
                     View Details
 
                     <FaArrowRight className="group-hover:translate-x-1 duration-300" />
-
-                  </button>
+                  </Link>
 
                 </div>
 

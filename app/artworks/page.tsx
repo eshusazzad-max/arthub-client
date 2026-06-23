@@ -7,18 +7,32 @@ import SearchBar from "@/components/artworks/SearchBar";
 import SortDropdown from "@/components/artworks/SortDropdown";
 import CategoryFilter from "@/components/artworks/CategoryFilter";
 import { motion } from "framer-motion";
+import Navbar from "@/components/shared/Navbar";
+import Footer from "@/components/shared/Footer";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
   export default function ArtworksPage() {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [sortOption, setSortOption] = useState("Default");
+  const searchParams = useSearchParams();
+
+     useEffect(() => {
+       const query = searchParams.get("search");
+
+      if (query) {
+        setSearchTerm(query);
+       }
+       }, [searchParams]);
 
   let filteredArtworks = artworks.filter(
-    (artwork) =>
-      artwork.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      artwork.artist.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
+  (artwork) =>
+    artwork.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    artwork.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    artwork.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    artwork.description.toLowerCase().includes(searchTerm.toLowerCase())
+);
   if (selectedCategory !== "All") {
     filteredArtworks = filteredArtworks.filter(
       (artwork) => artwork.category === selectedCategory
@@ -34,6 +48,8 @@ import { motion } from "framer-motion";
   }
 
   return (
+   <>
+    <Navbar />
     <section className="min-h-screen py-28">
 
       <div className="max-w-7xl mx-auto px-6">
@@ -142,5 +158,8 @@ import { motion } from "framer-motion";
       </div>
 
     </section>
+
+    <Footer />
+   </>
   );
 }

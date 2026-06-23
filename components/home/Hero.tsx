@@ -2,6 +2,7 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Link from "next/link";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -96,8 +97,10 @@ export default function Hero() {
 
               <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
                 Explore premium digital paintings and creative masterpieces.
-              </p>
+              </p> 
 
+
+              <Link href="/artworks">
               <div className="mt-12 flex justify-center">
                <button className="group relative overflow-hidden flex items-center justify-center gap-3 px-10 py-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 hover:-translate-y-1 duration-300 hover:shadow-xl hover:shadow-violet-500/40">
 
@@ -111,6 +114,7 @@ export default function Hero() {
 
                </button>
               </div>
+              </Link>
 
               <div className="mt-10 flex items-center justify-center gap-14">
 
@@ -211,6 +215,7 @@ export default function Hero() {
                 discover masterpieces crafted with passion.
               </p>
 
+              <a href="#featured">
              <button className="group relative overflow-hidden mt-10 px-8 py-4 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:-translate-y-1 duration-300 hover:shadow-xl hover:shadow-cyan-500/40">
 
               <span className="relative z-10">
@@ -220,6 +225,7 @@ export default function Hero() {
               <span className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-700 group-hover:translate-x-full"></span>
 
             </button>
+            </a>
 
             </motion.div>
 
@@ -296,6 +302,7 @@ export default function Hero() {
                 Discover beautiful creations and support amazing artists from around the world. Collect exclusive pieces and bring creativity into your life.
               </p>
 
+             <a href="#artists">
              <button className="group relative overflow-hidden mt-10 px-8 py-4 rounded-full bg-gradient-to-r from-emerald-500 to-cyan-600 hover:-translate-y-1 duration-300 hover:shadow-xl hover:shadow-emerald-500/40">
 
               <span className="relative z-10">
@@ -305,6 +312,7 @@ export default function Hero() {
               <span className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-700 group-hover:translate-x-full"></span>
 
              </button>
+             </a>
 
             </motion.div>
 
