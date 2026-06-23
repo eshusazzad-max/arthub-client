@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import artworks from "@/data/artworks.json";
 import ArtworkCard from "@/components/artworks/ArtworkCard";
@@ -11,7 +10,9 @@ import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
+await new Promise((resolve) => setTimeout(resolve, 1000));
   export default function ArtworksPage() {
+    
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
