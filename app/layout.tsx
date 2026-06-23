@@ -3,6 +3,7 @@ import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/providers/SmoothScroll";
 import MouseGlow from "@/providers/MouseGlow";
+import ScrollToTop from "@/components/shared/ScrollToTop";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
         <MouseGlow />
         <SmoothScroll />
         {children}
+        <ScrollToTop/>
       </body>
     </html>
   );
