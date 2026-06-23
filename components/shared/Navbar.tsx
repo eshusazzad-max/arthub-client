@@ -81,17 +81,25 @@ export default function Navbar() {
         {/* Buttons */}
         <div className="flex items-center gap-5">
 
-          <button className="flex items-center gap-2 px-5 py-2 border border-violet-500 rounded-full text-white transition-all duration-300 hover:bg-violet-600 hover:-translate-y-1 hover:shadow-lg hover:shadow-violet-500/40 active:scale-95">
-            <HiOutlineArrowRightOnRectangle />
-            Login
-          </button>
+          <Link
+            href="/login"
+            className="flex items-center gap-2 px-5 py-2 border border-violet-500 rounded-full text-white transition-all duration-300 hover:bg-violet-600 hover:-translate-y-1 hover:shadow-lg hover:shadow-violet-500/40 active:scale-95"
+          >
 
-          <button className="group relative overflow-hidden flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-violet-500/40 active:scale-95">
+            <HiOutlineArrowRightOnRectangle />
+             Login
+
+          </Link>
+
+          <Link
+            href="/register"
+            className="group relative overflow-hidden flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-violet-500/40 active:scale-95"
+          >
             <IoPersonAddOutline />
             Register
 
             <span className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-700 group-hover:translate-x-full"></span>
-          </button>
+          </Link>
 
         </div>
       </div>
