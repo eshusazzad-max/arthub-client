@@ -27,18 +27,18 @@ export default function FeaturedArtworks() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
 
         <motion.div
-  animate={{
-    scale: [1, 1.15, 1],
-    opacity: [0.25, 0.5, 0.25],
-    y: [0, -15, 0],
-  }}
-  transition={{
-    duration: 6,
-    repeat: Infinity,
-    ease: "easeInOut",
-  }}
-  className="absolute left-1/2 top-20 -translate-x-1/2 w-[500px] h-[220px] bg-violet-500/20 blur-[140px] rounded-full"
-/>
+           animate={{
+             scale: [1, 1.15, 1],
+             opacity: [0.25, 0.5, 0.25],
+             y: [0, -15, 0],
+           }}
+           transition={{
+             duration: 6,
+             repeat: Infinity,
+             ease: "easeInOut",
+           }}
+            className="absolute left-1/2 top-20 -translate-x-1/2 w-[500px] h-[220px] bg-violet-500/20 blur-[140px] rounded-full"
+          />
 
         {/* Heading */}
         <motion.div
@@ -117,22 +117,30 @@ export default function FeaturedArtworks() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:border-violet-500/40 duration-500"
+              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl 
+              hover:-translate-y-2 hover:border-violet-500/40 hover:shadow-[0_0_35px_rgba(139,92,246,.2)] duration-500"
             >
 
               {/* Image */}
-              <div className="overflow-hidden">
-                <span className="absolute top-4 right-4 bg-emerald-500 text-white text-xs px-3 py-1 rounded-full">
-                  Available
-                </span>
-                <Image
-                  src={art.image}
-                  alt={art.title}
-                  width={600}
-                  height={500}
-                  className="h-[320px] w-full object-cover duration-700 group-hover:scale-110"
-                />
-              </div>
+              <div className="relative h-72 overflow-hidden">
+             
+                     <Image
+                       src={art.image}
+                       alt={art.title}
+                       fill
+                       className="object-cover transition duration-500 group-hover:scale-105"
+                     />
+             
+                     {/* Available Badge */}
+                     <div className="absolute top-5 right-5 z-10 transition-all duration-500 group-hover:opacity-0 group-hover:translate-x-8">
+             
+                      <span className="px-4 py-2 rounded-full bg-emerald-500 text-white text-sm font-semibold shadow-lg">
+                        Available
+                      </span>
+             
+                     </div>
+             
+                   </div>
 
               {/* Content */}
               <div className="p-6">
