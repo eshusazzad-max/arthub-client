@@ -8,8 +8,10 @@ import Link from "next/link";
 
 export default function FeaturedArtworks() {
   return (
-    <section  id="featured"
-     className="relative py-28 overflow-hidden">
+     <section
+      id="featured"
+       className="relative py-28 overflow-hidden bg-white/60 dark:bg-[#050816]"
+     >
 
       {/* Background Glow */}
       <motion.div
@@ -62,7 +64,7 @@ export default function FeaturedArtworks() {
               duration:2,
               repeat:Infinity
             }}
-             className="text-violet-300 uppercase tracking-[6px] text-sm"
+             className="text-violet-500 dark:text-violet-300 uppercase tracking-[6px] text-sm"
           >
            FEATURED
           </motion.span>
@@ -96,11 +98,11 @@ export default function FeaturedArtworks() {
                  className="absolute left-1/2 top-20 -translate-x-1/2 w-[700px] h-[220px] bg-cyan-500/25 blur-[200px] rounded-full"
             />
 
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-white via-violet-200 to-cyan-300 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold bg-gradient-to-r from-violet-500 via-slate-900 dark:via-white to-cyan-400 bg-clip-text text-transparent">
             Featured Artworks
           </h2>
 
-          <p className="text-gray-400 mt-4">
+          <p className="text-slate-600 dark:text-gray-400 mt-4">
             Discover handpicked masterpieces from talented artists.
           </p>
 
@@ -118,8 +120,7 @@ export default function FeaturedArtworks() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -10 }}
-              className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl 
-              hover:-translate-y-2 hover:border-violet-500/40 hover:shadow-[0_0_35px_rgba(139,92,246,.2)] duration-500"
+              className="group relative overflow-hidden rounded-3xl border border-slate-200 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-xl hover:-translate-y-2 hover:border-violet-500/40 hover:shadow-[0_0_35px_rgba(139,92,246,.2)] duration-500"
             >
 
               {/* Image */}
@@ -146,26 +147,26 @@ export default function FeaturedArtworks() {
               {/* Content */}
               <div className="p-6">
 
-                <span className="text-xs px-3 py-1 rounded-full bg-violet-500/20 text-violet-300">
+                <span className="text-xs px-3 py-1 rounded-full bg-violet-500/15 text-violet-600 dark:text-violet-300">
                   {art.category}
                 </span>
 
-                <h3 className="text-2xl font-bold text-white mt-4">
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-4">
                   {art.title}
                 </h3>
 
-                <p className="text-gray-400 mt-2">
+                <p className="text-slate-600 dark:text-gray-400 mt-2">
                   By {art.artist}
                 </p>
 
-                <p className="mt-4 text-sm text-gray-400 leading-relaxed line-clamp-2">
+                <p className="mt-4 text-sm text-slate-600 dark:text-gray-400 leading-relaxed line-clamp-2">
                  {art.description}
                 </p>
 
-                <div className="my-5 border-t border-white/10"></div>
+                <div className="my-5 border-t border-slate-600 dark:border-white/10"></div>
 
                 <div className="flex items-center justify-between mt-6">
-                  <div className="my-5 border-t border-white/10"></div>
+                  <div className="my-5 border-t border-slate-600 dark:border-white/10"></div>
 
                   <h4 className="text-2xl font-bold text-cyan-400">
                     ${art.price}

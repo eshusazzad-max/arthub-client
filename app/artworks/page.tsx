@@ -55,7 +55,7 @@ import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
   return (
    <>
     <Navbar />
-    <section className="min-h-screen py-28">
+    <section className="min-h-screen py-28 bg-white/65 dark:bg-[#050816]">
 
       <div className="max-w-7xl mx-auto px-6">
 
@@ -79,7 +79,7 @@ import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
               duration:2,
               repeat:Infinity
             }}
-             className="text-violet-300 uppercase tracking-[6px] text-sm"
+            className="text-violet-500 dark:text-violet-300 uppercase tracking-[6px] text-sm"
            >
            EXPLORE
           </motion.span>
@@ -111,11 +111,11 @@ import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
                  className="absolute left-1/2 top-20 -translate-x-1/2 w-[600px] h-[220px] bg-cyan-500/15 blur-[180px] rounded-full"
             />
 
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-white via-violet-200 to-cyan-300 bg-clip-text text-transparent">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-slate-900 via-violet-600 to-cyan-500 dark:from-white dark:via-violet-200 dark:to-cyan-300 bg-clip-text text-transparent">
             Browse Artworks
           </h1>
 
-          <p className="text-gray-400 mt-4">
+          <p className="text-slate-600 dark:text-gray-400 mt-4">
             Discover and collect extraordinary masterpieces.
           </p>
 
@@ -163,16 +163,16 @@ import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
            <div className="col-span-full text-center py-24">
 
             <div className="flex justify-center mb-8">
-             <div className="w-28 h-28 rounded-full bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
+             <div className="w-28 h-28 rounded-full bg-white/60 dark:bg-violet-500/10 border border-slate-400 dark:border-violet-500/20 flex items-center justify-center backdrop-blur-xl">
               <HiOutlineMagnifyingGlass className="text-5xl text-violet-400" />
              </div>
             </div>
 
-            <h2 className="text-4xl font-bold text-white">
+            <h2 className="text-4xl font-bold text-slate-900 dark:text-white">
              No Artworks Found
             </h2>
 
-            <p className="text-gray-400 mt-4">
+            <p className="text-slate-600 dark:text-gray-400 mt-4">
               Try another keyword or category.
             </p>
 

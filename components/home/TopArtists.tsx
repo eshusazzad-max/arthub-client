@@ -14,8 +14,10 @@ import {
 
 export default function TopArtists() {
   return (
-    <section id="artists"
-     className="relative py-28 overflow-hidden">
+    <section
+      id="artists"
+       className="relative py-28 overflow-hidden bg-white/60 dark:bg-[#050816]"
+    >
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
@@ -41,7 +43,7 @@ export default function TopArtists() {
               duration:2,
               repeat:Infinity
             }}
-             className="text-violet-300 uppercase tracking-[6px] text-sm"
+            className="text-violet-500 dark:text-violet-300 uppercase tracking-[6px] text-sm"
           >
            TOP ARTISTS
           </motion.span>
@@ -74,11 +76,11 @@ export default function TopArtists() {
                  className="absolute left-1/2 top-20 -translate-x-1/2 w-[700px] h-[220px] bg-cyan-500/25 blur-[180px] rounded-full"
             />
 
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-white via-violet-200 to-cyan-300 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold bg-gradient-to-r from-violet-500 via-slate-900 dark:via-white to-cyan-400 bg-clip-text text-transparent">
             Meet Our Top Creators
           </h2>
 
-          <p className="text-gray-400 mt-4">
+          <p className="text-slate-600 dark:text-gray-400 mt-4">
             Discover talented artists behind our most loved collections.
           </p>
 
@@ -96,7 +98,7 @@ export default function TopArtists() {
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
               transition={{ delay: index * 0.1 }}
-              className="rounded-3xl overflow-hidden border border-violet-500/20 bg-[#081121] hover:border-violet-500/50 hover:shadow-[0_0_40px_rgba(139,92,246,.2)] duration-500"
+              className="rounded-3xl overflow-hidden border border-slate-200 dark:border-violet-500/20 bg-white/60 dark:bg-[#081121] backdrop-blur-xl hover:border-violet-500/50 hover:shadow-[0_0_40px_rgba(139,92,246,.2)] duration-500 "
             >
 
               {/* Cover */}
@@ -134,7 +136,7 @@ export default function TopArtists() {
               {/* Content */}
               <div className="text-center px-8 pb-8">
 
-                <h3 className="text-2xl font-bold text-white mt-5">
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-5">
                   {artist.name}
                 </h3>
 
@@ -143,7 +145,7 @@ export default function TopArtists() {
 
                   <FaPalette />
 
-                  <span className="text-gray-300">
+                  <span className="text-slate-600 dark:text-gray-300">
                     {artist.role}
                   </span>
 

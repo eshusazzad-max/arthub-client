@@ -39,7 +39,8 @@ const categories = [
 
 export default function Categories() {
   return (
-    <section className="relative max-w-7xl mx-auto px-5 pt-40 pb-24">
+     <section className="relative pt-40 pb-24 bg-white/60 dark:bg-[#050816]">
+      <div className="max-w-7xl mx-auto px-5">
 
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-cyan-500/10 blur-[150px] rounded-full"></div>
 
@@ -62,7 +63,7 @@ export default function Categories() {
               duration:2,
               repeat:Infinity
             }}
-             className="text-violet-300 uppercase tracking-[6px] text-sm"
+             className="text-violet-500 dark:text-violet-300 uppercase tracking-[6px] text-sm"
           >
            CATEGORIES
           </motion.span>
@@ -95,12 +96,12 @@ export default function Categories() {
                  className="absolute left-1/2 top-20 -translate-x-1/2 w-[600px] h-[220px] bg-cyan-500/15 blur-[180px] rounded-full"
             />
 
-        <h2 className="relative text-5xl font-bold bg-gradient-to-r from-violet-300 via-white to-cyan-300 bg-clip-text text-transparent">
+        <h2 className="relative text-5xl font-bold bg-gradient-to-r from-violet-500 via-slate-900 dark:via-white to-cyan-400 bg-clip-text text-transparent">
           Explore Categories
         </h2>
         <div className="absolute left-1/2 top-24 -translate-x-1/2 w-[350px] h-[120px] bg-violet-500/20 blur-[120px] rounded-full"></div>
 
-        <p className="text-gray-400 mt-4">
+        <p className="text-slate-600 dark:text-gray-400 mt-4">
           Find artworks across different styles and mediums.
         </p>
       </motion.div>
@@ -120,8 +121,8 @@ export default function Categories() {
             }}
             className="
             group
-            bg-[#0c1120]/80
-            border border-white/10
+           bg-white/55 dark:bg-[#0c1120]/80
+            border border-slate-200 dark:border-white/10
             rounded-3xl
             p-10
             text-center
@@ -142,13 +143,14 @@ export default function Categories() {
               {category.icon}
             </motion.div>
 
-            <h3 className="text-2xl font-semibold mt-6 group-hover:text-violet-300 duration-300">
+            <h3 className="text-2xl font-semibold mt-6 text-slate-900 dark:text-white group-hover:text-violet-400 duration-300">
               {category.title}
             </h3>
           </motion.div>
         ))}
 
       </div>
+     </div>
     </section>
   );
 }

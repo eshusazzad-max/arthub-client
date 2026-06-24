@@ -10,7 +10,7 @@ import { FcGoogle } from "react-icons/fc";
 export default function LoginPage() {
     const [showPassword, setShowPassword] = useState(false);
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 py-20">
+    <section className="min-h-screen flex items-center justify-center px-6 py-20 bg-white/60 dark:bg-[#050816]">
 
       <div className="max-w-6xl w-full grid lg:grid-cols-2 gap-10 items-center">
 
@@ -24,7 +24,7 @@ export default function LoginPage() {
 
            <div className="w-20 h-[1px] bg-gradient-to-r from-transparent to-violet-500"></div>
 
-            <span className="uppercase tracking-[8px] text-sm bg-gradient-to-r from-violet-300 to-cyan-300 bg-clip-text text-transparent">
+            <span className="uppercase tracking-[8px] text-sm bg-gradient-to-r from-violet-300 to-cyan-400 bg-clip-text text-transparent">
              WELCOME BACK
              </span>
 
@@ -32,20 +32,20 @@ export default function LoginPage() {
 
           </div>
 
-          <h1 className="text-6xl font-bold text-white mt-6 leading-tight">
+          <h1 className="text-6xl font-bold text-slate-900 dark:text-white mt-6 leading-tight">
             Sign in to continue your
             <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">
               {" "}Art Journey
             </span>
           </h1>
 
-          <p className="text-gray-400 mt-6 text-lg leading-8">
+          <p className="text-slate-600 dark:text-gray-400 mt-6 text-lg leading-8">
             Explore, collect and discover amazing artworks from talented artists around the world.
           </p>
 
-          <div className="mt-12 p-6 rounded-3xl border border-white/10 bg-white/5">
+          <div className="mt-12 p-6 rounded-3xl border border-slate-200 dark:border-white/10 bg-white/60 dark:bg-white/5">
 
-           <p className="text-gray-300 italic leading-8">
+           <p className="text-slate-600 dark:text-gray-300 italic leading-8">
            "Every masterpiece begins with imagination. Join thousands of art lovers and discover creativity without limits."
           </p>
 
@@ -54,9 +54,9 @@ export default function LoginPage() {
         </div>
 
         {/* Right Side */}
-        <div className="bg-white/5 border border-white/10 rounded-[32px] p-10 backdrop-blur-xl shadow-[0_0_40px_rgba(139,92,246,.1)]">
+        <div className="border border-slate-200 dark:border-white/10 bg-white/60 dark:bg-white/5 rounded-[32px] p-10 backdrop-blur-xl shadow-[0_0_40px_rgba(139,92,246,.1)]">
 
-          <h2 className="text-4xl font-bold text-white mb-10">
+          <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-10">
             Login
           </h2>
 
@@ -68,7 +68,7 @@ export default function LoginPage() {
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-14 pr-5 text-white outline-none focus:border-violet-500"
+              className="w-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl py-4 pl-14 pr-5 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-gray-500 outline-none focus:border-violet-500"
             />
 
           </div>
@@ -85,7 +85,7 @@ export default function LoginPage() {
              <input
                type={showPassword ? "text" : "password"}
                placeholder="Enter your password"
-               className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-14 pr-14 text-white outline-none focus:border-violet-500"
+              className="w-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl py-4 pl-14 pr-14 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-gray-500 outline-none focus:border-violet-500"
              />
 
             <button
@@ -106,7 +106,7 @@ export default function LoginPage() {
 
           <div className="flex items-center justify-between mb-8">
 
-            <label className="flex items-center gap-2 text-gray-400">
+           <label className="flex items-center gap-2 text-slate-600 dark:text-gray-400">
               <input type="checkbox" />
               Remember me
             </label>
@@ -127,18 +127,18 @@ export default function LoginPage() {
           {/* Divider */}
           <div className="flex items-center gap-4 my-8">
 
-            <div className="flex-1 h-[1px] bg-white/10"></div>
+            <div className="flex-1 h-[1px] bg-slate-400 dark:bg-white/10"></div>
 
-            <span className="text-gray-500 text-sm">
+            <span className="text-slate-500 dark:text-gray-500 text-sm">
               OR
             </span>
 
-            <div className="flex-1 h-[1px] bg-white/10"></div>
+            <div className="flex-1 h-[1px] bg-slate-400 dark:bg-white/10"></div>
 
           </div>
 
           {/* Google Button */}
-          <button className="w-full py-4 rounded-full border border-white/10 text-white flex items-center justify-center gap-3 hover:border-violet-500 duration-300">
+          <button className="w-full py-4 rounded-full border border-slate-200 dark:border-white/10 bg-white/60 dark:bg-white/5 text-slate-900 dark:text-white flex items-center justify-center gap-3 hover:border-violet-500 duration-300">
 
             <FcGoogle className="text-2xl" />
 
@@ -146,7 +146,7 @@ export default function LoginPage() {
 
           </button>
 
-          <p className="text-center text-gray-400 mt-8">
+          <p className="text-center text-slate-600 dark:text-gray-400 mt-8">
 
             Don't have an account?{" "}
 

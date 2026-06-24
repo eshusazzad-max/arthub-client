@@ -36,8 +36,10 @@ export default function FAQSection() {
   ];
 
   return (
-    <section id="faq"
-     className="relative py-28 overflow-hidden">
+    <section
+     id="faq"
+     className="relative py-28 overflow-hidden bg-white/60 dark:bg-[#050816]"
+    >
       {/* Glow */}
       <motion.div
         animate={{
@@ -71,7 +73,7 @@ export default function FAQSection() {
               duration:2,
               repeat:Infinity
             }}
-             className="text-violet-300 uppercase tracking-[6px] text-sm"
+             className="text-violet-500 dark:text-violet-300 uppercase tracking-[6px] text-sm"
            >
              FAQ
            </motion.span>
@@ -103,11 +105,11 @@ export default function FAQSection() {
                  className="absolute left-1/2 top-20 -translate-x-1/2 w-[600px] h-[220px] bg-cyan-500/15 blur-[180px] rounded-full"
             />
 
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-white via-violet-200 to-cyan-300 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold bg-gradient-to-r from-violet-500 via-slate-900 dark:via-white to-cyan-400 bg-clip-text text-transparent">
             Frequently Asked Questions
           </h2>
 
-          <p className="text-gray-400 mt-4">
+          <p className="text-slate-600 dark:text-gray-400 mt-4">
             Everything you need to know about buying and selling artworks.
           </p>
         </motion.div>
@@ -121,7 +123,7 @@ export default function FAQSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden"
+              className="rounded-3xl border border-slate-200 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-xl overflow-hidden"
             >
               <button
                 onClick={() =>
@@ -129,7 +131,7 @@ export default function FAQSection() {
                 }
                 className="w-full flex items-center justify-between px-8 py-6 text-left"
               >
-                <h3 className="text-lg md:text-xl font-semibold text-white">
+               <h3 className="text-lg md:text-xl font-semibold text-slate-900 dark:text-white">
                   {faq.question}
                 </h3>
 
@@ -139,7 +141,7 @@ export default function FAQSection() {
               </button>
 
               {openIndex === index && (
-                <div className="px-8 pb-6 text-gray-400 leading-7">
+                <div className="px-8 pb-6 text-slate-600 dark:text-gray-400 leading-7">
                   {faq.answer}
                 </div>
               )}

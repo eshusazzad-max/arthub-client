@@ -12,7 +12,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-violet-500/20 mt-28">
+    <footer className="relative overflow-hidden border-t border-slate-500 dark:border-violet-500/20 bg-white/60 dark:bg-[#050816]">
 
       {/* Glow */}
       <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[500px] h-[200px] bg-violet-500/10 blur-[150px] rounded-full"></div>
@@ -24,18 +24,18 @@ export default function Footer() {
           {/* Logo */}
           <div>
               <Logo />
-            <p className="text-gray-400 mt-5 leading-8">
+            <p className="text-slate-600 dark:text-gray-400 mt-5 leading-8">
               Discover and collect extraordinary digital artworks from talented creators around the world.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white text-xl font-semibold mb-6">
+            <h3 className="text-slate-900 dark:text-white text-xl font-semibold mb-6">
               Quick Links
             </h3>
 
-            <div className="space-y-4 text-gray-400">
+            <div className="space-y-4 text-gray-600">
               <Link href="#home" className="block hover:text-violet-400 duration-300">
                 Home
               </Link>
@@ -56,11 +56,11 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="text-white text-xl font-semibold mb-6">
+            <h3 className="text-slate-900 dark:text-white text-xl font-semibold mb-6">
               Resources
             </h3>
 
-            <div className="space-y-4 text-gray-400">
+            <div className="space-y-4 text-slate-600 dark:text-gray-400">
               <Link href="/" className="block hover:text-violet-400 duration-300">
                 Privacy Policy
               </Link>
@@ -77,7 +77,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h3 className="text-white text-xl font-semibold mb-6">
+            <h3 className="text-slate-900 dark:text-white text-xl font-semibold mb-6">
               Follow Us
             </h3>
 
@@ -86,28 +86,28 @@ export default function Footer() {
               <a
                 href="https://www.facebook.com/login/"
 
-                className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-violet-500 hover:border-violet-500 duration-300"
+               className="w-12 h-12 rounded-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-600 dark:text-gray-300 hover:text-white hover:bg-violet-500 hover:border-violet-500 duration-300"
               >
                 <FaFacebookF />
               </a>
 
               <a
                 href="https://www.instagram.com/?hl=en"
-                className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-pink-500 hover:border-pink-500 duration-300"
+               className="w-12 h-12 rounded-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-600 dark:text-gray-300 hover:text-white hover:bg-violet-500 hover:border-violet-500 duration-300"
               >
                 <FaInstagram />
               </a>
 
               <a
                 href="https://x.com/i"
-                className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-sky-500 hover:border-sky-500 duration-300"
+                className="w-12 h-12 rounded-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-600 dark:text-gray-300 hover:text-white hover:bg-violet-500 hover:border-violet-500 duration-300"
               >
                 <FaXTwitter />
               </a>
 
               <a
                 href="https://www.linkedin.com/feed/"
-                className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-cyan-500 hover:border-cyan-500 duration-300"
+                className="w-12 h-12 rounded-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-600 dark:text-gray-300 hover:text-white hover:bg-violet-500 hover:border-violet-500 duration-300"
               >
                 <FaLinkedinIn />
               </a>
@@ -117,8 +117,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="border-t border-white/10 mt-16 pt-8 text-center">
-           <p className="text-gray-500 text-sm">
+        <div className="border-t border-slate-600 dark:border-white/10 mt-16 pt-8 text-center">
+           <p className="text-slate-500 dark:text-gray-500 text-sm">
              &copy; {new Date().getFullYear()} ArtHub. Crafted with passion for art enthusiasts.
           </p>
         </div>

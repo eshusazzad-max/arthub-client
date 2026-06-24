@@ -34,13 +34,13 @@ export default async function ArtworkDetails({
     <>
     <Navbar />
 
-    <section className="min-h-screen py-28">
+    <section className="min-h-screen py-28 bg-white/60 dark:bg-[#050816]">
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="grid lg:grid-cols-2 gap-14 items-center">
 
           {/* Image */}
-          <div className="relative h-[550px] rounded-3xl overflow-hidden border border-white/10">
+          <div className="relative h-[550px] rounded-3xl overflow-hidden border border-slate-400 dark:border-white/10 shadow-lg">
             <Image
               src={artwork.image}
               alt={artwork.title}
@@ -50,17 +50,17 @@ export default async function ArtworkDetails({
           </div>
 
           {/* Content */}
-          <div className="bg-white/5 border border-white/10 rounded-[32px] p-10 backdrop-blur-xl shadow-[0_0_40px_rgba(139,92,246,.1)]">
+          <div className="bg-white/55 dark:bg-[#0d1527] border border-slate-400 dark:border-white/10 rounded-[32px] p-10 backdrop-blur-xl shadow-[0_0_40px_rgba(139,92,246,.1)]">
 
-            <span className="px-4 py-2 rounded-full bg-violet-500/20 text-violet-300">
+            <span className="px-4 py-2 rounded-full bg-violet-500/20 text-violet-600 dark:text-violet-300">
               {artwork.category}
             </span>
 
-            <h1 className="text-5xl font-bold text-white mt-8">
+            <h1 className="text-5xl font-bold text-slate-900 dark:text-white mt-8">
               {artwork.title}
             </h1>
 
-            <div className="mt-8 border border-white/10 rounded-3xl p-5 bg-white/5 flex items-center justify-between">
+            <div className="mt-8 border  rounded-3xl p-5 border-slate-300 dark:border-white/10 bg-slate-50 dark:bg-white/5 flex items-center justify-between">
 
              <div className="flex items-center gap-4">
 
@@ -73,11 +73,11 @@ export default async function ArtworkDetails({
                />
 
                <div>
-                <p className="text-gray-500 text-sm uppercase">
+                <p className="text-slate-500 dark:text-gray-500 text-sm uppercase">
                   Artist
                 </p>
 
-                <h3 className="text-xl text-white font-semibold">
+                <h3 className="text-xl text-slate-900 dark:text-white/50 font-semibold">
                  {artwork.artist}
                </h3>
                </div>
@@ -90,11 +90,11 @@ export default async function ArtworkDetails({
 
             </div>
 
-            <p className="text-gray-400 text-lg leading-9 mt-10">
+            <p className="text-slate-600 dark:text-gray-400 text-lg leading-9 mt-10">
               {artwork.description}
             </p>
 
-            <div className="border-t border-white/10 mt-10 pt-10 flex justify-between">
+            <div className="border-t border-slate-300 dark:border-white/10 mt-10 pt-10 flex justify-between">
 
              <div>
               <p className="text-gray-500 text-sm uppercase">
@@ -130,7 +130,7 @@ export default async function ArtworkDetails({
 
              <Link
                 href="/artworks"
-                className="px-8 py-5 rounded-full border border-white/10 text-white hover:border-violet-500 duration-300 flex items-center justify-center"
+               className="flex-1 py-5 rounded-full border border-slate-300 dark:border-white/10 bg-white/80 dark:bg-transparent text-slate-800 dark:text-white hover:border-violet-500 hover:bg-violet-50 dark:hover:bg-white/5 duration-300 flex items-center justify-center"
              >
                Back
              </Link>
@@ -147,7 +147,7 @@ export default async function ArtworkDetails({
         <div className="flex items-center justify-center gap-4 mb-5">
           <div className="w-20 h-[1px] bg-gradient-to-r from-transparent to-violet-500"></div>
 
-          <span className="uppercase tracking-[6px] text-sm text-violet-300">
+          <span className="uppercase tracking-[6px] text-sm text-violet-500 dark:text-violet-300">
             DISCOVER MORE
           </span>
 
@@ -171,9 +171,9 @@ export default async function ArtworkDetails({
 
       <div className="max-w-6xl mx-auto mt-28">
 
-         <div className="border border-white/10 rounded-[32px] bg-white/5 p-10">
+         <div className="border border-slate-300 dark:border-white/10 rounded-[32px] bg-white/50 dark:bg-white/5 p-10">
 
-          <h2 className="flex items-center gap-3 text-3xl font-bold text-white mb-8">
+          <h2 className="flex items-center gap-3 text-3xl font-bold text-slate-900 dark:text-white mb-8">
              <div className="p-3 rounded-2xl bg-violet-500/10 border border-violet-500/20">
               <HiOutlineChatBubbleLeftRight className="text-violet-400 text-2xl" />
              </div>
@@ -181,11 +181,11 @@ export default async function ArtworkDetails({
            Reviews & Comments (0)
           </h2>
 
-          <div className="border border-white/20 rounded-2xl px-6 py-5 text-gray-500">
+          <div className="border border-slate-300 dark:border-white/20 rounded-2xl px-6 py-5 bg-white/70 dark:bg-white/5 text-slate-700 dark:text-gray-500">
              Please sign in and verify your purchase history to leave a review.
           </div>
 
-          <div className="mt-16 text-center text-gray-600">
+          <div className="mt-16 text-center text-slate-500 dark:text-gray-600">
            No comments or reviews have been posted yet.
           </div>
 

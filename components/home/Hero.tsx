@@ -14,8 +14,10 @@ import { FaUsers, FaPalette, FaGlobe } from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <section id="home"
-    className="min-h-[85vh]">
+     <section
+      id="home"
+      className="min-h-[85vh] bg-white/50 dark:bg-[#050816]"
+      >
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
         autoplay={{
@@ -85,17 +87,17 @@ export default function Hero() {
               transition={{ duration: 1 }}
               className="relative z-20"
             >
-              <div className="inline-flex items-center gap-2 px-5 py-2 border border-violet-500 rounded-full text-violet-400">
+              <div className="inline-flex items-center gap-2 px-5 py-2 border border-violet-300 dark:border-violet-500 bg-white/80 dark:bg-transparent rounded-full text-violet-600 dark:text-violet-400">
                <HiSparkles className="text-sm" />
                <span>Welcome To ArtHub Marketplace</span>
                </div>
 
-              <h1 className="text-6xl md:text-7xl font-bold mt-8 leading-[1.1] bg-gradient-to-r from-white via-violet-300 to-cyan-300 bg-clip-text text-transparent">
+              <h1 className="text-6xl md:text-7xl font-bold mt-8 leading-[1.1] bg-gradient-to-r from-slate-900 dark:from-white via-violet-400 to-cyan-400 bg-clip-text text-transparent">
                 Discover & Buy <br />
                 Original Artworks
               </h1>
 
-              <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
+              <p className="text-slate-600 dark:text-gray-400 mt-6 max-w-2xl mx-auto">
                 Explore premium digital paintings and creative masterpieces.
               </p> 
 
@@ -121,19 +123,19 @@ export default function Hero() {
                <div className="flex flex-col items-center gap-1">
                 <FaUsers className="text-2xl text-violet-400" />
                 <h3 className="text-2xl font-bold text-violet-400">500+</h3>
-                <p className="text-gray-400 text-xs">Artists</p>
+                <p className="text-slate-600 dark:text-gray-400 text-xs">Artists</p>
               </div>
 
               <div className="flex flex-col items-center gap-1">
                <FaPalette className="text-2xl text-cyan-400" />
                <h3 className="text-2xl font-bold text-cyan-400">1200+</h3>
-               <p className="text-gray-400 text-xs">Artworks</p>
+               <p className="text-slate-600 dark:text-gray-400 text-xs">Artworks</p>
              </div>
 
              <div className="flex flex-col items-center gap-1">
               <FaGlobe className="text-2xl text-emerald-400" />
               <h3 className="text-2xl font-bold text-emerald-400">50+</h3>
-              <p className="text-gray-400 text-xs">Countries</p>
+              <p className="text-slate-600 dark:text-gray-400 text-xs">Countries</p>
              </div>
 
             </div>
@@ -210,7 +212,7 @@ export default function Hero() {
                 Masterpieces
               </h1>
 
-              <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
+              <p className="text-slate-600 dark:text-gray-400 mt-6 max-w-2xl mx-auto">
                 Explore unique artworks from talented creators around the world and
                 discover masterpieces crafted with passion.
               </p>
@@ -298,7 +300,7 @@ export default function Hero() {
                 Art Pieces
               </h1>
 
-              <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
+              <p className="text-slate-600 dark:text-gray-400 mt-6 max-w-2xl mx-auto">
                 Discover beautiful creations and support amazing artists from around the world. Collect exclusive pieces and bring creativity into your life.
               </p>
 

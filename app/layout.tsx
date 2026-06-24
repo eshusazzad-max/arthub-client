@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/providers/SmoothScroll";
 import MouseGlow from "@/providers/MouseGlow";
 import ScrollToTop from "@/components/shared/ScrollToTop";
+import ThemeProvider from "@/components/shared/ThemeProvider";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -20,12 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={bricolage.className}>
+        <ThemeProvider>
         <MouseGlow />
         <SmoothScroll />
-        {children}
-        <ScrollToTop/>
+         {children}
+        <ScrollToTop />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -3,7 +3,8 @@
 import { usePathname } from "next/navigation";
 import Logo from "./Logo";
 import { GoHome } from "react-icons/go";
-import Link from "next/link";
+import Link from "next/link"
+import ThemeToggle from "./ThemeToggle";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import {
@@ -26,7 +27,8 @@ export default function Navbar() {
      };
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-white/10 bg-[#050816]/80 backdrop-blur-xl">
+    <nav className="sticky top-0 z-50 border-b border-black/10 dark:border-white/10 bg-white/60 dark:bg-[#050816]/80 backdrop-blur-xl">
+
       <div className="max-w-7xl mx-auto px-4 lg:px-8 py-5 flex items-center justify-between gap-8">
 
         {/* Logo */}
@@ -36,23 +38,23 @@ export default function Navbar() {
         {pathname !== "/artworks" && (
           <form
             onSubmit={handleSearch}
-           className="hidden lg:flex items-center w-[380px] bg-[#0c1120] border border-white/10 rounded-full px-4 py-3"
+           className="hidden lg:flex items-center w-[380px] bg-gray-200 dark:bg-[#0c1120] border border-black/10 dark:border-white/10 rounded-full px-4 py-3"
           >
 
-            <IoSearchOutline className="text-gray-400 text-xl" />
+            <IoSearchOutline className="text-gray-700 text-xl" />
 
               <input
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search artworks..."
-                className="bg-transparent outline-none ml-3 text-white text-sm w-full"
+                className="bg-transparent outline-none ml-3 text-slate-800 dark:text-white  placeholder:text-slate-800 dark:placeholder:text-gray-400 text-sm w-full"
               />
           </form>
           
         )}
         {/* Nav Links */}
-        <ul className="hidden md:flex items-center gap-10 text-white">
+        <ul className="hidden md:flex items-center gap-10 text-slate-800 dark:text-white">
 
           <li>
            <Link
@@ -79,11 +81,12 @@ export default function Navbar() {
         </ul>
 
         {/* Buttons */}
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
 
           <Link
             href="/login"
-            className="flex items-center gap-2 px-5 py-2 border border-violet-500 rounded-full text-white transition-all duration-300 hover:bg-violet-600 hover:-translate-y-1 hover:shadow-lg hover:shadow-violet-500/40 active:scale-95"
+            className="flex items-center gap-2 px-5 py-2 rounded-full bg-white/80 dark:bg-transparent border border-slate-400 dark:border-violet-500 text-slate-800 dark:text-white transition-all duration-300 hover:bg-violet-500 hover:text-white hover:-translate-y-1 hover:shadow-lg hover:shadow-violet-500/30 active:scale-95"
           >
 
             <HiOutlineArrowRightOnRectangle />
