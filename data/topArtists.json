@@ -6,7 +6,8 @@
     "country": "USA",
     "sales": 120,
     "image": "/artists/artist1.jpg",
-    "cover": "/artworks/art1_dreamscape_horizon.jpg"
+    "cover": "/artworks/art1_dreamscape_horizon.jpg",
+    "artworkId": 1
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "country": "Canada",
     "sales": 98,
     "image": "/artists/artist2.jpg",
-    "cover": "/artworks/art2_golden_silence.jpg"
+    "cover": "/artworks/art2_golden_silence.jpg",
+    "artworkId": 2
   },
   {
     "id": 3,
@@ -24,6 +26,7 @@
     "country": "United Kingdom",
     "sales": 85,
     "image": "/artists/artist3.jpg",
-    "cover": "/artworks/art3_cyber_muse.jpg"
+    "cover": "/artworks/art3_cyber_muse.jpg",
+    "artworkId": 3
   }
 ]

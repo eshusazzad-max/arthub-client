@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import topArtists from "@/data/topArtists.json";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
@@ -160,14 +161,13 @@ export default function TopArtists() {
                   </div>
 
                 {/* Sales */}
-                 <button className="group mt-8 w-[180px] mx-auto px-8 py-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 text-white font-semibold flex items-center justify-center gap-2 hover:scale-105 duration-300">
-
-                    View Profile
-
-                    <FaArrowRight className="group-hover:translate-x-1 duration-300" />
-
-                  </button>
-
+                <Link
+                 href={`/artworks/${artist.artworkId}`}
+                 className="group mt-8 w-[180px] mx-auto px-8 py-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 text-white font-semibold flex items-center justify-center gap-2 hover:scale-105 duration-300"
+                >
+                 View Profile
+                 <FaArrowRight className="group-hover:translate-x-1 duration-300" />
+                </Link>
               </div>
 
             </motion.div>
