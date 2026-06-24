@@ -36,19 +36,19 @@ export default function Footer() {
             </h3>
 
             <div className="space-y-4 text-gray-600">
-              <Link href="#home" className="block hover:text-violet-400 duration-300">
+              <Link href="/#home" className="block hover:text-violet-400 duration-300">
                 Home
               </Link>
 
-              <Link href="featured" className="block hover:text-violet-400 duration-300">
+              <Link href="/#featured" className="block hover:text-violet-400 duration-300">
                 Explore
               </Link>
 
-              <Link href="artists" className="block hover:text-violet-400 duration-300">
+              <Link href="/#artists" className="block hover:text-violet-400 duration-300">
                 Artists
               </Link>
 
-              <Link href="faq" className="block hover:text-violet-400 duration-300">
+              <Link href="/#faq" className="block hover:text-violet-400 duration-300">
                 FAQ
               </Link>
             </div>
@@ -61,15 +61,15 @@ export default function Footer() {
             </h3>
 
             <div className="space-y-4 text-slate-600 dark:text-gray-400">
-              <Link href="/" className="block hover:text-violet-400 duration-300">
+              <Link href="/privacy-policy" className="block hover:text-violet-400 duration-300">
                 Privacy Policy
               </Link>
 
-              <Link href="/" className="block hover:text-violet-400 duration-300">
+              <Link href="/terms" className="block hover:text-violet-400 duration-300">
                 Terms & Conditions
               </Link>
 
-              <Link href="/" className="block hover:text-violet-400 duration-300">
+              <Link href="/support" className="block hover:text-violet-400 duration-300">
                 Support
               </Link>
             </div>
