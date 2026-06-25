@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { HiOutlineEye, HiOutlineEyeSlash } from "react-icons/hi2";
+import { signIn } from "next-auth/react";
 
 import Link from "next/link";
 import { HiOutlineEnvelope, HiOutlineLockClosed } from "react-icons/hi2";
@@ -138,7 +139,9 @@ export default function LoginPage() {
           </div>
 
           {/* Google Button */}
-          <button className="w-full py-4 rounded-full border border-slate-200 dark:border-white/10 bg-white/60 dark:bg-white/5 text-slate-900 dark:text-white flex items-center justify-center gap-3 hover:border-violet-500 duration-300">
+          <button 
+          onClick={() => signIn("google")}
+          className="w-full py-4 rounded-full border border-slate-200 dark:border-white/10 bg-white/60 dark:bg-white/5 text-slate-900 dark:text-white flex items-center justify-center gap-3 hover:border-violet-500 duration-300">
 
             <FcGoogle className="text-2xl" />
 

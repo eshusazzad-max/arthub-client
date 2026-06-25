@@ -5,6 +5,7 @@ import SmoothScroll from "@/providers/SmoothScroll";
 import MouseGlow from "@/providers/MouseGlow";
 import ScrollToTop from "@/components/shared/ScrollToTop";
 import ThemeProvider from "@/components/shared/ThemeProvider";
+import AuthSessionProvider from "@/components/shared/SessionProvider";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -23,12 +24,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={bricolage.className}>
-        <ThemeProvider>
-        <MouseGlow />
-        <SmoothScroll />
-         {children}
-        <ScrollToTop />
-        </ThemeProvider>
+        <AuthSessionProvider>
+         <ThemeProvider>
+          <MouseGlow />
+          <SmoothScroll />
+           {children}
+          <ScrollToTop />
+         </ThemeProvider>
+        </AuthSessionProvider>
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
 import {
@@ -147,7 +148,9 @@ export default function RegisterPage() {
             <div className="flex-1 h-[1px] bg-slate-400 dark:bg-white/10"></div>
           </div>
 
-          <button className="w-full py-4 rounded-full border border-slate-200 dark:border-white/10 bg-white/60 dark:bg-white/5 text-slate-900 dark:text-white flex items-center justify-center gap-3 hover:border-violet-500 duration-300">
+          <button 
+          onClick={() => signIn("google")}
+          className="w-full py-4 rounded-full border border-slate-200 dark:border-white/10 bg-white/60 dark:bg-white/5 text-slate-900 dark:text-white flex items-center justify-center gap-3 hover:border-violet-500 duration-300">
 
             <FcGoogle className="text-2xl" />
 
