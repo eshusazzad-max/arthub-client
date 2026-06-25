@@ -140,7 +140,11 @@ export default function LoginPage() {
 
           {/* Google Button */}
           <button 
-          onClick={() => signIn("google")}
+         onClick={() =>
+    signIn("google", {
+      callbackUrl: "/",
+    })
+  }
           className="w-full py-4 rounded-full border border-slate-200 dark:border-white/10 bg-white/60 dark:bg-white/5 text-slate-900 dark:text-white flex items-center justify-center gap-3 hover:border-violet-500 duration-300">
 
             <FcGoogle className="text-2xl" />
