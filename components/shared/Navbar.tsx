@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { useSession, signOut } from "next-auth/react";
 import Logo from "./Logo";
 import { GoHome } from "react-icons/go";
 import Link from "next/link"
@@ -17,6 +18,7 @@ export default function Navbar() {
    const pathname = usePathname();
    const [search, setSearch] = useState("");
    const router = useRouter();
+   const { data: session } = useSession();
 
    const handleSearch = (e: React.FormEvent) => {
       e.preventDefault();
@@ -54,7 +56,7 @@ export default function Navbar() {
           
         )}
         {/* Nav Links */}
-        <ul className="hidden md:flex items-center gap-10 text-slate-800 dark:text-white">
+        <ul className="hidden md:flex items-center gap-6 text-slate-800 dark:text-white">
 
           <li>
            <Link
@@ -78,32 +80,54 @@ export default function Navbar() {
              <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-violet-500 duration-300 group-hover:w-full"></span>
             </Link>
           </li>
+
+          {session && (
+            <li>
+             <Link
+               href="/dashboard"
+               className="group relative flex items-center gap-2 hover:text-violet-400 duration-300"
+             >
+                <HiOutlineSquares2X2 />
+                 Dashboard
+
+               <span className="absolute -bottom-2 left-0 h-[2px] w-0 bg-violet-500 duration-300 group-hover:w-full"></span>
+             </Link>
+           </li>
+          )}
         </ul>
 
         {/* Buttons */}
         <div className="flex items-center gap-4">
-          <ThemeToggle />
+         <ThemeToggle />
 
-          <Link
-            href="/login"
-            className="flex items-center gap-2 px-5 py-2 rounded-full bg-white/80 dark:bg-transparent border border-slate-400 dark:border-violet-500 text-slate-800 dark:text-white transition-all duration-300 hover:bg-violet-500 hover:text-white hover:-translate-y-1 hover:shadow-lg hover:shadow-violet-500/30 active:scale-95"
-          >
+          {session ? (
+           <>
+           <button
+              onClick={() => signOut({ callbackUrl: "/" })}
+              className="flex items-center gap-2 px-5 py-2 rounded-full bg-white/80 dark:bg-transparent border border-slate-400 dark:border-violet-500 text-slate-800 dark:text-white"
+           >
+              Logout
+           </button>
+           </>
+          ) : (
+           <>
+            <Link
+              href="/login"
+              className="flex items-center gap-2 px-5 py-2 rounded-full bg-white/80 dark:bg-transparent border border-slate-400 dark:border-violet-500 text-slate-800 dark:text-white"
+            >
+              <HiOutlineArrowRightOnRectangle />
+              Login
+            </Link>
 
-            <HiOutlineArrowRightOnRectangle />
-             Login
-
-          </Link>
-
-          <Link
-            href="/register"
-            className="group relative overflow-hidden flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-violet-500/40 active:scale-95"
-          >
-            <IoPersonAddOutline />
-            Register
-
-            <span className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-700 group-hover:translate-x-full"></span>
-          </Link>
-
+            <Link
+               href="/register"
+               className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 text-white"
+             >
+              <IoPersonAddOutline />
+                Register
+            </Link>
+           </>
+         )}
         </div>
       </div>
     </nav>
