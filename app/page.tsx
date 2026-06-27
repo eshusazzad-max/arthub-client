@@ -1,4 +1,4 @@
-import SaveUser from "@/components/auth/SaveUser";
+
 import Categories from "@/components/home/Categories";
 import FAQSection from "@/components/home/FAQSection";
 import FeaturedArtworks from "@/components/home/FeaturedArtworks";
@@ -12,7 +12,6 @@ import Navbar from "@/components/shared/Navbar";
 export default function Home() {
   return (
     <main>
-      <SaveUser />
       <Navbar />
       <Hero/>
       <Categories/>

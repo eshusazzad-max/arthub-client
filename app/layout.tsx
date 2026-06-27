@@ -6,6 +6,8 @@ import MouseGlow from "@/providers/MouseGlow";
 import ScrollToTop from "@/components/shared/ScrollToTop";
 import ThemeProvider from "@/components/shared/ThemeProvider";
 import AuthSessionProvider from "@/components/shared/SessionProvider";
+import { Toaster } from "react-hot-toast";
+import SaveUser from "@/components/auth/SaveUser";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -26,9 +28,21 @@ export default function RootLayout({
       <body className={bricolage.className}>
         <AuthSessionProvider>
          <ThemeProvider>
+          <SaveUser/>
           <MouseGlow />
           <SmoothScroll />
            {children}
+           <Toaster
+            position="top-right"
+            toastOptions={{
+             duration: 3000,
+              style: {
+             background: "#18181B",
+             color: "#fff",
+             border: "1px solid #7C3AED",
+           },
+          }}
+          />
           <ScrollToTop />
          </ThemeProvider>
         </AuthSessionProvider>

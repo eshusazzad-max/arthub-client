@@ -1,3 +1,5 @@
+
+
 export default function ArtistDashboard() {
   return (
     <div>
