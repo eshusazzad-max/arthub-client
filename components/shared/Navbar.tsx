@@ -19,6 +19,10 @@ export default function Navbar() {
    const [search, setSearch] = useState("");
    const router = useRouter();
    const { data: session } = useSession();
+   const token =
+  typeof window !== "undefined"
+    ? localStorage.getItem("token")
+    : null;
 
    const handleSearch = (e: React.FormEvent) => {
       e.preventDefault();
@@ -81,7 +85,7 @@ export default function Navbar() {
             </Link>
           </li>
 
-          {session && (
+          {(session || token) && (
             <li>
              <Link
                href="/dashboard"
@@ -100,10 +104,20 @@ export default function Navbar() {
         <div className="flex items-center gap-4">
          <ThemeToggle />
 
-          {session ? (
+          {session || token ? (
            <>
            <button
-              onClick={() => signOut({ callbackUrl: "/" })}
+               onClick={() => {
+               localStorage.removeItem("token");
+               localStorage.removeItem("role");
+
+               if (session) {
+                  signOut({ callbackUrl: "/" });
+               } else {
+                  router.push("/");
+                  window.location.reload();
+                }
+              }}
               className="flex items-center gap-2 px-5 py-2 rounded-full bg-white/80 dark:bg-transparent border border-slate-400 dark:border-violet-500 text-slate-800 dark:text-white"
            >
               Logout

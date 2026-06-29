@@ -40,21 +40,14 @@ export default function LoginPage() {
       }
     );
 
-    localStorage.setItem("token", response.data.token);
+   localStorage.setItem("token", response.data.token);
+localStorage.setItem("role", response.data.user.role);
 
-    toast.success("Login Successful");
+toast.success("Login Successful");
 
-    const role = response.data.user.role;
-
-    setTimeout(() => {
-      if (role === "admin") {
-        router.push("/dashboard/admin");
-      } else if (role === "artist") {
-        router.push("/dashboard/artist");
-      } else {
-        router.push("/dashboard/user");
-      }
-    }, 1000);
+setTimeout(() => {
+  router.push("/");
+}, 1000);
 
   } catch (error: any) {
     toast.error(
