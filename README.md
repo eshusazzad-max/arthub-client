@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ArtHub – Online Art Marketplace
 
-## Getting Started
+ArtHub is a modern online art marketplace where artists can showcase and manage their artworks while buyers can explore and purchase original artworks. The platform provides role-based dashboards for Users, Artists, and Admins with a modern and responsive interface.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+##  Live Website
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔗 https://your-vercel-link.vercel.app
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+##  Features
 
-## Learn More
+-  JWT Authentication
+-  Email & Password Login
+-  User & Artist Role Selection
+-  Browse All Artworks
+-  Search, Filter & Sort Artworks
+-  Artwork Details Page
+-  Artist Add Artwork
+-  Update Artwork
+-  Delete Artwork
+-  My Artworks Dashboard
+-  Dark Mode
+- Fully Responsive Design
+- Smooth Animations
+- Premium UI Design
+- Custom 404 Page
+- Loading Spinner
+-  Dashboard Layout
+- Environment Variable Support
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technology Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Frontend
 
-## Deploy on Vercel
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Next Themes
+- Axios
+- React Hook Form
+- React Icons
+- Sonner
+- SweetAlert2
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Backend
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Node.js
+- Express.js
+- MongoDB
+- JWT
+- bcryptjs
+- CORS
+- dotenv
+
+---
+
+## NPM Packages
+
+### Client
+
+- next
+- react
+- axios
+- tailwindcss
+- framer-motion
+- react-hook-form
+- react-icons
+- next-auth
+- next-themes
+- sonner
+- sweetalert2
+
+### Server
+
+- express
+- mongodb
+- cors
+- dotenv
+- jsonwebtoken
+- bcryptjs
+
+---
+
+## Environment Variables
+
+### Client
+
+```env
+NEXT_PUBLIC_API_URL=
+NEXTAUTH_URL=
+NEXTAUTH_SECRET=
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=

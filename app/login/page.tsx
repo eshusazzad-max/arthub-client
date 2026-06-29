@@ -43,6 +43,9 @@ export default function LoginPage() {
    localStorage.setItem("token", response.data.token);
 localStorage.setItem("role", response.data.user.role);
 
+console.log("Response:", response.data);
+console.log("Role:", role);
+
 toast.success("Login Successful");
 
 setTimeout(() => {

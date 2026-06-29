@@ -1,6 +1,8 @@
 import Link from "next/link";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
-import Sidebar from "@/components/dashboard/Sidebar";
+
+import ArtistSidebar from "@/components/dashboard/Sidebar";
+import AdminSidebar from "@/app/dashboard/AdminSidebar";
 
 export default function DashboardLayout({
   children,
@@ -11,7 +13,7 @@ export default function DashboardLayout({
     <div className="min-h-screen flex bg-slate-400 dark:bg-[#050816]">
 
       {/* Sidebar */}
-     <Sidebar/>
+    <AdminSidebar />
 
       {/* Main Content */}
      <main className="flex-1 p-8 overflow-y-auto">
