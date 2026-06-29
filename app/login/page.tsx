@@ -7,9 +7,63 @@ import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { HiOutlineEnvelope, HiOutlineLockClosed } from "react-icons/hi2";
 import { FcGoogle } from "react-icons/fc";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
     const [showPassword, setShowPassword] = useState(false);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
+
+    const router = useRouter();
+
+    const handleLogin = async (
+  e: React.FormEvent<HTMLFormElement>
+) => {
+  e.preventDefault();
+
+  if (!email || !password) {
+    toast.error("Please fill all fields");
+    return;
+  }
+
+  try {
+    setLoading(true);
+
+    const response = await axios.post(
+      "http://localhost:5000/login",
+      {
+        email,
+        password,
+      }
+    );
+
+    localStorage.setItem("token", response.data.token);
+
+    toast.success("Login Successful");
+
+    const role = response.data.user.role;
+
+    setTimeout(() => {
+      if (role === "admin") {
+        router.push("/dashboard/admin");
+      } else if (role === "artist") {
+        router.push("/dashboard/artist");
+      } else {
+        router.push("/dashboard/user");
+      }
+    }, 1000);
+
+  } catch (error: any) {
+    toast.error(
+      error.response?.data?.message || "Login Failed"
+    );
+  } finally {
+    setLoading(false);
+  }
+};
   return (
     <section className="min-h-screen flex items-center justify-center px-6 py-20 bg-white/60 dark:bg-[#050816]">
 
@@ -60,6 +114,7 @@ export default function LoginPage() {
           <h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-10">
             Login
           </h2>
+          <form onSubmit={handleLogin}>
 
           {/* Email */}
           <div className="relative mb-6">
@@ -69,6 +124,8 @@ export default function LoginPage() {
             <input
               type="email"
               placeholder="Enter your email"
+              value={email}
+              onChange={(e)=>setEmail(e.target.value)}
               className="w-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl py-4 pl-14 pr-5 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-gray-500 outline-none focus:border-violet-500"
             />
 
@@ -86,6 +143,8 @@ export default function LoginPage() {
              <input
                type={showPassword ? "text" : "password"}
                placeholder="Enter your password"
+               value={password}
+               onChange={(e)=>setPassword(e.target.value)}
               className="w-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl py-4 pl-14 pr-14 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-gray-500 outline-none focus:border-violet-500"
              />
 
@@ -119,9 +178,12 @@ export default function LoginPage() {
           </div>
 
           {/* Login Button */}
-          <button className="w-full py-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 text-white font-semibold hover:scale-[1.02] duration-300">
+          <button 
+          type="submit"
+          disabled={loading}
+          className="w-full py-4 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 text-white font-semibold hover:scale-[1.02] duration-300">
 
-            Sign In
+            {loading ? "Signing In..." : "Sign In"}
 
           </button>
 
@@ -141,10 +203,10 @@ export default function LoginPage() {
           {/* Google Button */}
           <button 
          onClick={() =>
-    signIn("google", {
-      callbackUrl: "/",
-    })
-  }
+         signIn("google", {
+         callbackUrl: "/",
+          })
+         }
           className="w-full py-4 rounded-full border border-slate-200 dark:border-white/10 bg-white/60 dark:bg-white/5 text-slate-900 dark:text-white flex items-center justify-center gap-3 hover:border-violet-500 duration-300">
 
             <FcGoogle className="text-2xl" />
@@ -165,6 +227,7 @@ export default function LoginPage() {
             </Link>
 
           </p>
+          </form>
 
         </div>
 
